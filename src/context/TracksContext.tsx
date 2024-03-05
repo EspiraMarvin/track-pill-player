@@ -65,6 +65,7 @@ export const TracksProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, [trackName])
 
+  /** add pill to track */
   const handleAddPillToTrack = useCallback(
     (pill: any) => {
       setPills([...pills, pill])
@@ -72,6 +73,7 @@ export const TracksProvider = ({ children }: { children: React.ReactNode }) => {
     [pills, setPills]
   )
 
+  /** save audio track, and show it in the Tracks list */
   const saveTrack = useCallback(() => {
     const newAudioTrack = { title: audioTrack.title, sources: [...pills] }
     setAudioTracks((prev: any) => [newAudioTrack, ...prev])
@@ -82,6 +84,7 @@ export const TracksProvider = ({ children }: { children: React.ReactNode }) => {
     setPlayingIndex(0)
   }, [audioTrack, pills, setPills])
 
+  /** delete pill from track in the timeline */
   const handleDeletePillFromTrack = useCallback(
     (pill: IPill) => {
       const index = pills.indexOf(pill)
@@ -94,6 +97,7 @@ export const TracksProvider = ({ children }: { children: React.ReactNode }) => {
     [pills, setPills]
   )
 
+  /** delete track from track list */
   const handleDeleteTrackFromTrackList = useCallback(
     (track: any) => {
       const index = audioTracks.indexOf(track)

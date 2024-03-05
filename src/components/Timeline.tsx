@@ -4,6 +4,7 @@ import Pill from './Pill'
 import { usePills } from '../hooks/usePills'
 import { useTracks } from '../hooks/useTracks'
 
+/** allows adding of multiple pills on a track, shifting position of pills on the track, and playback options */
 export default function Timeline() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [playingIndex, setPlayingIndex] = useState(0)
@@ -48,7 +49,7 @@ export default function Timeline() {
       )}
       {audioTrackLength > 0 && pills.length > 0 && (
         <div className="border">
-          <div className="flex flex-row border-top p-2 overflow-x-auto overflow-x-scroll">
+          <div className="flex flex-row border-top p-2 w-[100vw] scroll-x-auto">
             {pills.map((pill: any, index: any) => (
               <Pill
                 key={index}

@@ -19,6 +19,7 @@ interface PillInterface {
   handleDragEnter: (e: any, index: number) => any
 }
 
+/** displayed on the timeline, essentially forms a track */
 export default function Pill({
   file,
   index,

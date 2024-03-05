@@ -2,6 +2,7 @@ import React from 'react'
 import File from './File'
 import { usePills } from '../hooks/usePills'
 
+/** displays audio files */
 export default function AudioLibrary() {
   const { files } = usePills()
   return (

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTracks } from '../hooks/useTracks'
 
+/** allows creating of a track, adds the track name */
 export default function CreateTrack() {
   const [loading, setLoading] = useState(false)
   const [audioTrackLength, setAudioTrackLength] = useState(0)

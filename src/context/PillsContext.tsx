@@ -95,7 +95,6 @@ export const PillsProvider = ({ children }: { children: React.ReactNode }) => {
    */
   const handleUploadNewPill = useCallback((event: any) => {
     event.preventDefault()
-    // try {
     let isDropped = event?.dataTransfer?.files[0]?.type.includes('audio')
     let isUploaded = event?.target?.files[0]?.type.includes('audio')
 
@@ -123,11 +122,9 @@ export const PillsProvider = ({ children }: { children: React.ReactNode }) => {
       }
       setFile(newFile)
     }
-    // } catch (error: any) {
-    // notify(error?.message)
-    // }
   }, [])
 
+  /** handles pill start drag event */
   const handleDragStart = useCallback(
     () => (e: any, index: any) => {
       setDragItemIndex(index)
@@ -142,28 +139,19 @@ export const PillsProvider = ({ children }: { children: React.ReactNode }) => {
 
   /** handles drag enter event */
   const handleDragEnter = useCallback((e: any, index: any) => {
-    console.log('handleDragEnter', index)
-
     setDragOverItemIndex(index)
   }, [])
 
   /** handles drag drop event */
   const handleDrop = useCallback(
     (event: any, index: any) => {
-      console.log('BEFORE REORDERED PILLS', pills)
-
-      // console.log('event at handleDrop', event)
-      console.log('index at handleDrop', index)
-
+      /** from this event we can now reorder the order of each pill according to the index dropped on */
       const reorderedPills = [...pills]
       // move item to new position
       const dragItem = reorderedPills.splice(dragItemIndex, 1)[0]
-      console.log('DRAG ITEM', dragItem)
-      console.log('dragOverItemIndex', dragOverItemIndex)
 
       reorderedPills.splice(dragOverItemIndex, 0, dragItem)
       setPills(reorderedPills)
-      console.log('REORDERED PILLS', reorderedPills)
       setDragOverItemIndex(undefined)
     },
     [dragItemIndex, dragOverItemIndex, pills]

@@ -14,6 +14,7 @@ interface FileInterface {
   file: IFile
 }
 
+/** holds audio files displayed in the audio library */
 export default function File({ file }: FileInterface) {
   const [isPlaying, setIsPlaying] = useState(false)
   const [duration, setDuration] = useState(0)
