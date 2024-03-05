@@ -7,7 +7,7 @@ import React, {
   useRef,
 } from 'react'
 import { audioLibraryFiles } from '../data/pills'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 
 interface IPill {
   title: string

@@ -3,7 +3,7 @@ import './App.css'
 import AddPill from './components/AddPill'
 import AudioLibrary from './components/AudioLibrary'
 import Timeline from './components/Timeline'
-import toast, { Toaster } from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
 import TracksList from './components/TracksList'
 import CreateTrack from './components/CreateTrack'
 
