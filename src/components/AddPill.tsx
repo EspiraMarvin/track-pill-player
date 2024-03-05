@@ -1,6 +1,7 @@
 import React from 'react'
 import { usePills } from '../hooks/usePills'
 
+/** allows addding of an audio file/pill to the audio pill library */
 export default function AddPill() {
   const { file, handleAddPillToLibrary, handleUploadNewPill, handleDragOver } =
     usePills()

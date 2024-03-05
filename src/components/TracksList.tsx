@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import ReactPlayer from 'react-player'
 import { useTracks } from '../hooks/useTracks'
 
+/** shows the tracks  in a list */
 export default function TracksList() {
   const {
     audioTracks,
