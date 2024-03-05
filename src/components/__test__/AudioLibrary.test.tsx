@@ -18,9 +18,9 @@ describe('AudioLibrary Component', () => {
     expect(componentTitle).toBeInTheDocument()
   })
 
-  it('should test length of all pills in the library to be 7', async () => {
+  it('should test length of all pills in the library to be 11', async () => {
     render(<MockAudioLibrary />)
     const trackInput = await screen.findAllByTestId('trackTitle')
-    expect(trackInput.length).toBe(7)
+    expect(trackInput.length).toBe(11)
   })
 })
